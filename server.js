@@ -16,6 +16,15 @@ app.get('/', function(req, res){
   res.send('TODO API Root');
 });
 
+//GET /todos
+app.use('/todos', function(req, res){
+  res.send(todos);
+});
+//GET /todos/unique
+app.use('/todos/unique', function(req, res){
+  res.send(todos[1]);
+});
+
 app.listen(PORT, function(){
   console.log('Express listening on port ' + PORT + '!');
 });

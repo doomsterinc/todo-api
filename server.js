@@ -18,7 +18,7 @@ app.get('/', function(req, res){
 
 //GET /todos
 app.use('/todos', function(req, res){
-  res.send(todos);
+  res.json(todos);
 });
 //GET /todos/unique
 app.use('/todos/unique', function(req, res){

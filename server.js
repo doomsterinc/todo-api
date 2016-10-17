@@ -9,6 +9,10 @@ var todos = [{
   id: 2,
   description: "Go to market",
   complete: false,
+}, {
+  id: 3,
+  description: "Feed the cat",
+  complete: true,
 }
 ];
 
@@ -17,12 +21,12 @@ app.get('/', function(req, res){
 });
 
 //GET /todos
-app.use('/todos', function(req, res){
+app.get('/todos', function(req, res){
   res.json(todos);
 });
-//GET /todos/unique
-app.use('/todos/unique', function(req, res){
-  res.send(todos[1]);
+//GET /todos/:id
+app.get('/todos/:id', function(req, res){
+  res.send('Asking for todo with if of ' + req.params.id);
 });
 
 app.listen(PORT, function(){

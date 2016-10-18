@@ -38,7 +38,8 @@ app.get('/todos/:id', function(req, res){
 app.post('/todos', function(req, res){
   var body = req.body;
 
-  console.log('description: ' + body.description);
+  body.id = todoNextID++;
+  todos.push(body);
 
   res.json(body);
 });

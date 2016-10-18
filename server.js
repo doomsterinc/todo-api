@@ -1,20 +1,8 @@
 var express = require('express');
 var app = express();
 const PORT = process.env.PORT || 3000;
-var todos = [{
-  id: 1,
-  description: "Meet mom for lunch",
-  complete: false,
-}, {
-  id: 2,
-  description: "Go to market",
-  complete: false,
-}, {
-  id: 3,
-  description: "Feed the cat",
-  complete: true,
-}
-];
+var todos = [];
+var todoNextID = 1;
 
 app.get('/', function(req, res){
   res.send('TODO API Root');
@@ -40,6 +28,11 @@ app.get('/todos/:id', function(req, res){
   } else {
     res.status(404).send();
   }
+});
+
+// POST /todos/
+app.post('/todos', function(req, res){
+  
 });
 
 app.listen(PORT, function(){

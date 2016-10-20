@@ -36,6 +36,7 @@ app.post('/todos', function(req, res){
     res.status(400).send();
   }
 
+  body.description = body.description.trim();
   body.id = todoNextID++;
   todos.push(body);
 

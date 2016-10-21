@@ -57,6 +57,9 @@ app.delete('/todos/:id', function(req, res){
 });
 
 //PUT /todos/:id
+app.put('/todos/:id', function(req, res){
+  var body = _.pick(req.body, 'description', 'completed');
+});
 
 app.listen(PORT, function(){
   console.log('Express listening on port ' + PORT + '!');

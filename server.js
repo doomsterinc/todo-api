@@ -80,6 +80,7 @@ app.put('/todos/:id', function(req, res){
   }
 
   _.extend(matchedTodo, validAttributes);
+  res.json(matchedTodo);
 });
 
 app.listen(PORT, function(){

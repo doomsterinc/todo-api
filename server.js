@@ -1,11 +1,14 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var _ = require('underscore');
+var middleware = require('./middleware.js');
 
 var app = express();
 const PORT = process.env.PORT || 3000;
 var todos = [];
 var todoNextID = 1;
+
+app.use(middleware.logger);
 
 app.use(bodyParser.json());
 

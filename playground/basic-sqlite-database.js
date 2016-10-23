@@ -15,4 +15,12 @@ var Todo = sequelize.define("todo", {
 
 sequelize.sync().then(function() {
   console.log('Everything is synced');
+
+  Todo.create({
+    description: "Walking my dog",
+    completed: false
+  }).then(function(todo){
+    console.log('Finished!');
+    console.log(todo);
+  });
 });

@@ -13,7 +13,7 @@ var Todo = sequelize.define("todo", {
   }
 });
 
-sequelize.sync().then(function() {
+sequelize.sync({force: true}).then(function() {
   console.log('Everything is synced');
 
   Todo.create({

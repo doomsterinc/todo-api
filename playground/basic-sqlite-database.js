@@ -27,10 +27,24 @@ sequelize.sync({force: true}).then(function() {
   }).then(function(){
     return Todo.create({
       description: "Clean office"
-    })
-  }).then(function(todo){
-    console.log('Finished!');
-    console.log(todo);
+    });
+  }).then({
+    // return Todo.findById(1);
+    return Todo.findAll({
+      where: {
+        description: {
+          $like: '%Office%'
+        }
+      }
+    });
+  }).then(function(todos){
+    if (todos) {
+      todos.forEach(function(todo){
+        console.log(todo.toJSON());
+      });
+    } else {
+      console.log('not todo found!');
+    }
   }).catch(function(e){
     console.log(e);
   });

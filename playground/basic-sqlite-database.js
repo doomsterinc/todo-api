@@ -28,8 +28,8 @@ sequelize.sync({force: true}).then(function() {
     return Todo.create({
       description: "Clean office"
     });
-  }).then({
-    // return Todo.findById(1);
+  }).then(function(){
+    // return Todo.findById(1)
     return Todo.findAll({
       where: {
         description: {

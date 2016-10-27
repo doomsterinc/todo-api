@@ -1,5 +1,5 @@
-
-# Created by https://www.gitignore.io/api/macos,node
+# Directories
+playground
 
 ### macOS ###
 *.DS_Store

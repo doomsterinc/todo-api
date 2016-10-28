@@ -54,7 +54,7 @@ app.get('/todos', function(req, res){
   //   });
   // }
 
-  res.json(filteredTodos);
+  // res.json(filteredTodos);
 });
 
 //GET /todos/:id

@@ -34,6 +34,12 @@ app.get('/todos', function(req, res){
     };
   }
 
+  db.todo.findAll({where: where}).then(function(todos) {
+    res.json(todos);
+  }, function(e) {
+    res.status(500).send();
+  });
+
   // var filteredTodos = todos;
   //
   // if (queryParams.hasOwnProperty("completed") && queryParams.completed === "true") {
